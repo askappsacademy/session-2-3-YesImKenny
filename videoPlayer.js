@@ -8,9 +8,22 @@ const videoArray = [
 ];
 
 // task 1 - declare a var to target video play list element
-
+//id "videoList"
+const videoPlayList = document.querySelectorAll(".video");;
+// console.log('videoPlayListElement Keys: ', Object.keys(videoPlayListElement));
 // task 2 - write a function setVideos where it loops through the video play list elements in index.html file then apply click event handler to pass url from videoArray to another function
-
+function setVideos (videoList) {
+  for (let i = 0; i < videoPlayList.length; i++){
+    let currVideoElement = videoList[i];
+    let currVideoUrl = videoArray[i];
+    currVideoElement.addEventListener("click", (currVideoUrl) => {
+      console.log(`VIDEO CLICKED! ${i+1}`);
+    });
+  }
+}
+setVideos(videoPlayList);
 // task 3 - write a function loadVideo where it takes an url as a parameter to render the video as an iframe in the video container element
+function loadVideo (url) {
 
+}
 // task 4 - call setVideos function to pass in the above video play list element
